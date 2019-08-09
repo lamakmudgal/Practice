@@ -22,6 +22,7 @@ class LinkList(LinkListNode):
             if currNode.data == 38:
                 count = count + 1
             currNode = currNode.nextNode
+
     def reverselinklist(self,headNode):
         if headNode is None: # Error Statement
             print("was I here")
@@ -30,15 +31,15 @@ class LinkList(LinkListNode):
             print("in if loop",headNode.data)
             return headNode
         newHeadNode1 = self.reverselinklist(headNode.nextNode)
-        #print("headNode.data",headNode.data)
         headNode.nextNode.nextNode = headNode
-        #print("checl",headNode.nextNode.nextNode.data)
         headNode.nextNode = None
         return newHeadNode1
+
     def popanode(self):
         print(self.headNode.data," is being popped")
         self.headNode = self.headNode.nextNode
         print("New head node", self.headNode.data)
+
     def pushatindex(self,newNode,index):
         if newNode is None:
             return ValueError
@@ -53,6 +54,7 @@ class LinkList(LinkListNode):
             count +=1
         print("Index greater than list")
         return self.headNode
+
     def sortedInsert(self,newNode):
         if newNode is None:
             return ValueError
@@ -96,6 +98,7 @@ class LinkList(LinkListNode):
             currNode = currNode.nextNode
         #print(currNode.data)
         currNode.nextNode = self.headNode.nextNode.nextNode.nextNode
+
     def findcycleinalisthash(self):
         storage_hash = {}
         currNode = self.headNode
@@ -120,13 +123,14 @@ class LinkList(LinkListNode):
         if cyclefound == False:
             print("No cycle found")
         return None
+
     def findcycleinalistfastpointer(self):
         slowpointer = self.headNode
         fastpointer = self.headNode
         cyclefound = False
         while slowpointer and fastpointer and fastpointer.nextNode:
             slowpointer = slowpointer.nextNode
-            fastpointer = fastpointer.nextNode.nextNode
+            fastpointer = fastpointer.nextNode.nextNod  e
             print("slow",slowpointer.data,fastpointer.data)
             if slowpointer == fastpointer:
                 print("Cycle in the list 1",slowpointer.data,fastpointer.data)
