@@ -181,6 +181,7 @@ class BinaryTreeImplement:
         self.printroottoleafpaths(root.right)
         print(self.listpath)
         k = self.listpath.pop()
+
     def isbinsumtree(self,root):
         if root is None:
             return 0

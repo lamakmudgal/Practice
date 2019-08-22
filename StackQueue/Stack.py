@@ -60,5 +60,5 @@ class stackoperations:
 
 
 objstack = stackoperations()
-objstack.createminvalstack([50,15,1,22,6,18,9,6,5])
+objstack.createminvalstack([50,15,1,22,1,6,18,9,6,5])
 print(objstack.getminval())

@@ -1,9 +1,7 @@
 def reverseastack(stack1):
     if len(stack1)<1:
         return None
-    newstack = []
     return reverseastackhelper(stack1)
-
 
 def reverseastackhelper(stack1):
     if len(stack1)<1:
@@ -23,6 +21,14 @@ def insertatbottom(stack, item):
         print("temp",temp)
         insertatbottom(stack,temp)
         stack.append(temp)
+
+def reversestack2(stack1):
+    def reversestack2help(stack1,tempstack=[]):
+        if len(stack1)>0:
+            tempstack.append(stack1.pop())
+            reversestack2help(stack1,tempstack)
+        return tempstack
+    return reversestack2help(stack1)
 
 
 stack1 = [1,2,3,4,5]
