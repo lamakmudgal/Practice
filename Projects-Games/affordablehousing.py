@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 
-def readandprint();
+def readandprint():
     with urlopen ("http://www.archhousing.org/homebuyers/affordable-homes-sale.html") as web_file:
         print(web_file)
     ##ah = open("affordablehouses.txt", 'w')

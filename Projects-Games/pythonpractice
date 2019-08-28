@@ -1,0 +1,33 @@
+import cx_Oracle
+import mysql.connector
+
+# conn_str = u'aradmin/linux@jdbc:oracle:thin:@sea-rmdyqadb:1521:tics1'
+dsn = cx_Oracle.makedsn("sea-rmdyqadb", "1521", "tics1")
+conn = cx_Oracle.connect(user="aradmin", password="linux", dsn=dsn)
+# conn = cx_Oracle.connect()
+c = conn.cursor()
+print("oracle")
+strval = str('3104105464A08')
+enodeb = strval[6:10]
+print("val",enodeb,int(enodeb,16))
+query = ("SELECT CELLSITE_UNIQUEID, ECGI, CARRIERSTREETADDRESS, ZIP, CITY, MARKET_ID FROM LTE_CELLSITESECTOR WHERE ECGI = '"+ strval +"'")
+
+c.execute(query)
+values = []
+for row in c:
+    print(row)
+    values=list(row)
+
+print("List oif values", values[0], len(values))
+conn.close()
+"""
+cnx = mysql.connector.connect(user='cdm', password='pa55w0rd', host='sbsdp-mysqldb1', database='deploymentweb')
+connectionobj = cnx.cursor()
+query = ("Select * from snap_psap_live where psap_id ='P20173001'")
+connectionobj.execute(query)
+for row in connectionobj:
+    print(row)
+cnx.close()
+"""
+
+# cnx = mysql.connector.connect(user='cdm', password='pa55w0rd', host='sbsdp-mysqldb1:3306',database='deploymentweb')
