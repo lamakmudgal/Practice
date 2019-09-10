@@ -36,13 +36,3 @@ print(finalstring.find(B))
 print(finalstring.find("k"))
 print(finalstring.find("ab"))
 
-"""
-
-elif (finalstring + A).find(B):
-    print("inhere 3")
-    print(i+1)
-else:
-    print("-1")
-
-# if
-"""

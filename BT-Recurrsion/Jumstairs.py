@@ -6,7 +6,7 @@ def numofways_raw(n):
         return 0
     elif n == 0:
         return 1
-    return numofways(n-1)+numofways(n-1)+numofways(n-3)
+    return numofways(n-1)+numofways(n-2)+numofways(n-3)
 
 def numofwayscatche(n,cache):
     #print(n)
@@ -15,7 +15,7 @@ def numofwayscatche(n,cache):
     elif n == 0:
         return 1
     elif cache[n] > -1:
-        print(cache[n])
+        #print(cache[n])
         return cache[n]
     else:
         #print("populating cache:",cache)
@@ -26,5 +26,14 @@ def numofwayscatche(n,cache):
 
 
 if __name__ == "__main__":
-    print((numofways_raw(5)))
-    print((numofways(5)))
+    import time
+
+    start = time.time()
+    print((numofways_raw(500)))
+    "the code you want to test stays here"
+    end = time.time()
+    print(end - start)
+    #start = time.time()
+    print((numofways(50)))
+    #end = time.time()
+    #print(end - start)

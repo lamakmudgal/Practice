@@ -4,15 +4,14 @@ class Solution:
             return False
         dictduplicate = {}
         for i,items in enumerate(nums):
-            print(items)
             if items in dictduplicate:
-                print(dictduplicate)
-                print(dictduplicate[items],i)
-                if i - dictduplicate[items] <=k:
+                print("1",dictduplicate)
+                print("2",dictduplicate[items], i)
+                if i - dictduplicate[items] <= k:
                     return True
             else:
-                dictduplicate[items]  = i
-        print(dictduplicate)
+                dictduplicate[items] = i
+        print("3",dictduplicate)
         return False
 
     def myPow(self, x: 'float', n: 'int') -> 'float':
@@ -54,16 +53,14 @@ class Solution:
         print(state)
         return state[-1]
 
-#input = [99,99]
-#k =2
-
 
 obj = Solution()
-#print(obj.containsNearbyDuplicate(input,k))
+
 
 input = [1,2,3,1,2,3]
 k =2
+print(obj.containsNearbyDuplicate(input,k))
 #print(obj.containsNearbyDuplicate(input,k))
 #print(obj.myPow(8.95371,-1))
 
-print(obj.wordBreak("applepenapple",["apple","pen"]))
+#print(obj.wordBreak("applepenapple",["apple","pen"]))
